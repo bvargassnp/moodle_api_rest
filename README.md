@@ -1,2 +1,2 @@
-# moodle_api_rest
-Integracion API REST Moodle
+# PlaceToPay_api_rest
+Integracion API REST PlaceToPay
