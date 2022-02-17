@@ -207,7 +207,10 @@ CLASS zcl_edu_pasarela_pagos IMPLEMENTATION.
          e_status               = DATA(lv_status_rest)
      ).
 
-    IF e_output-status-status EQ 'REJECTED'.
+    IF e_output-status-status EQ 'REJECTED' OR
+       e_output-status-status EQ 'APPROVED_PARTIAL' OR
+       e_output-status-status EQ 'PARTIAL_EXPIRED' OR
+       e_output-status-status EQ ''.
 
       RAISE EXCEPTION TYPE zcx_edu_pasarela_pagos
         EXPORTING
