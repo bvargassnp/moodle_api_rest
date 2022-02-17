@@ -209,8 +209,7 @@ CLASS zcl_edu_pasarela_pagos IMPLEMENTATION.
 
     IF e_output-status-status EQ 'REJECTED' OR
        e_output-status-status EQ 'APPROVED_PARTIAL' OR
-       e_output-status-status EQ 'PARTIAL_EXPIRED' OR
-       e_output-status-status EQ ''.
+       e_output-status-status EQ 'PARTIAL_EXPIRED'.
 
       RAISE EXCEPTION TYPE zcx_edu_pasarela_pagos
         EXPORTING
