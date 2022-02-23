@@ -94,7 +94,7 @@ CLASS zcl_edu_pasarela_pagos IMPLEMENTATION.
     i_input-return_url = me->gt_c_param[ repid = gc_repid_pp idparam = gc_return_url ]-valor.
     i_input-ip_address = '127.0.0.1'.
     i_input-user_agent = |'SAP NETWEAVER 7.4 '{ sy-saprl } '-' { sy-opsys }|.
-    i_input-payment-allowpartial = me->gt_c_param[ repid = gc_repid_pp idparam = gc_allow_part ]-valor.
+    i_input-payment-allow_partial = me->gt_c_param[ repid = gc_repid_pp idparam = gc_allow_part ]-valor.
 
 
     me->http_client(
@@ -209,8 +209,7 @@ CLASS zcl_edu_pasarela_pagos IMPLEMENTATION.
 
     IF e_output-status-status EQ 'REJECTED' OR
        e_output-status-status EQ 'APPROVED_PARTIAL' OR
-       e_output-status-status EQ 'PARTIAL_EXPIRED' OR
-       e_output-status-status EQ ''.
+       e_output-status-status EQ 'PARTIAL_EXPIRED'.
 
       RAISE EXCEPTION TYPE zcx_edu_pasarela_pagos
         EXPORTING
